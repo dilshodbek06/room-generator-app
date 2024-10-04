@@ -9,7 +9,7 @@ const CookieBanner = () => {
 
   return (
     <div className="absolute">
-      <section className="fixed flex items-center justify-between max-w-4xl p-3 px-4 mx-auto  border-t border-gray-200 shadow-sm bg-gray-900 left-12 bottom-14 dark:shadow-gray-900 shadow-gray-100 md:gap-x-4 dark:border-gray-700 rounded-2xl">
+      <section className="fixed flex items-center justify-between max-w-4xl p-3 px-4 mx-auto  border-t border-gray-200 shadow-sm bg-gray-900  left-3 sm:left-4  md:left-12 bottom-14 dark:shadow-gray-900 shadow-gray-100 md:gap-x-4 dark:border-gray-700 rounded-2xl">
         <p className="text-[12px] text-gray-300 dark:text-gray-300">
           Please don&apos;t upload bad or prohibited pictures
         </p>

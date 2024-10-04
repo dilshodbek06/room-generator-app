@@ -28,14 +28,6 @@ const PreviewImage = () => {
           />
         </div>
       )}
-
-      {/* <Image
-        alt="preview"
-        src="/images/placeholder.svg"
-        width={400}
-        height={300}
-        className="object-cover"
-      /> */}
     </div>
   );
 };

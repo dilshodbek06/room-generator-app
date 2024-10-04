@@ -1,6 +1,5 @@
 import { create } from "zustand";
 
-// Define the types for your store
 interface StoreState {
   resultImageUrl: string | null;
   uploadedImageUrl: string | null;
@@ -13,13 +12,11 @@ interface StoreState {
   handleResetForm: () => void;
 }
 
-// Create the store
 const useStore = create<StoreState>((set) => ({
   resultImageUrl: null,
   uploadedImageUrl: null,
   roomType: null,
   roomTheme: null,
-  //   increment: () => set((state) => ({ count: state.count + 1 })),
   handleUploadImage: (imageUrl) => set(() => ({ uploadedImageUrl: imageUrl })),
   handleResultImage: (imageUrl) => set(() => ({ resultImageUrl: imageUrl })),
   handleRoomType: (value) => set(() => ({ roomType: value })),

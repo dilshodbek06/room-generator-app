@@ -101,3 +101,8 @@ body {
     transform: scale(1);
   }
 }
+
+.cl-userButtonAvatarBox {
+  width: 2.5rem;
+  height: 2.5rem;
+}
