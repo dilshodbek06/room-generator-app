@@ -4,6 +4,7 @@ import { IKUpload, ImageKitProvider } from "imagekitio-next";
 import { useState } from "react";
 import CustomImage from "./custom-image";
 import Loading from "./loading";
+import useStore from "@/store/store";
 
 const UploadImage = () => {
   const publicKey = process.env.NEXT_PUBLIC_PUBLIC_KEY;
@@ -11,6 +12,8 @@ const UploadImage = () => {
 
   const [url, setUrl] = useState<string | null>(null);
   const [loading, setLoading] = useState<boolean>(false);
+
+  const { handleUploadImage } = useStore();
 
   const authenticator = async () => {
     try {
@@ -39,6 +42,7 @@ const UploadImage = () => {
   const onSuccess = (res: { url: string }) => {
     setUrl(res.url);
     setLoading(false);
+    handleUploadImage(res.url);
   };
 
   const onUploadStart = () => {
@@ -48,7 +52,7 @@ const UploadImage = () => {
   return (
     <div className="w-full">
       {url ? (
-        <div className=" w-3/4 mx-auto relative min-h-48">
+        <div className=" md:w-3/4 mx-auto relative min-h-48">
           <CustomImage
             className="object-cover mx-auto rounded"
             src={url}

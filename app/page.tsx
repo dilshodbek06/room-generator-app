@@ -1,4 +1,5 @@
 import CompareSlider from "@/components/shared/compare-slider";
+import CookieBanner from "@/components/shared/cookie-banner";
 import Link from "next/link";
 
 export default function Home() {
@@ -22,6 +23,7 @@ export default function Home() {
       <div>
         <CompareSlider />
       </div>
+      <CookieBanner />
     </main>
   );
 }

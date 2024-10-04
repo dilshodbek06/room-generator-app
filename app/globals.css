@@ -92,7 +92,7 @@ body {
   );
   position: absolute;
   z-index: -10;
-  transform: scale(2);
+  transform: scale(1.8);
   inset: 0;
   pointer-events: none;
 }

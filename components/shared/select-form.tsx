@@ -7,10 +7,13 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import useStore from "@/store/store";
 
 const SelectForm = () => {
-  const handleChange = (e: string) => {
-    console.log(e);
+  const { handleRoomType } = useStore();
+
+  const handleChange = (value: string) => {
+    handleRoomType(value);
   };
 
   return (

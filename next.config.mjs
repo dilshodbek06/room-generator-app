@@ -7,6 +7,11 @@ const nextConfig = {
         hostname: "ik.imagekit.io",
         port: "",
       },
+      {
+        protocol: "https",
+        hostname: "neuroapi-store.s3.eu-central-1.amazonaws.com",
+        port: "",
+      },
     ],
   },
 };

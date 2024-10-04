@@ -1,5 +1,6 @@
 "use client";
 
+import useStore from "@/store/store";
 import { Check } from "lucide-react";
 import Image from "next/image";
 import { useState } from "react";
@@ -16,9 +17,11 @@ const themes = [
 const ThemeForm = () => {
   const [selectedTheme, setSelectedTheme] = useState("");
 
+  const { handleRoomTheme } = useStore();
+
   const handleClick = (value: string) => {
-    console.log(value);
     setSelectedTheme(value);
+    handleRoomTheme(value);
   };
 
   return (

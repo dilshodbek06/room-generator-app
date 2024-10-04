@@ -5,7 +5,7 @@ import UserInfo from "./user-info";
 const Header = () => {
   return (
     <header className="w-full">
-      <div className="container border-b p-2 mx-auto flex items-center justify-between">
+      <div className="container border-b p-2 px-3 md:px-0 mx-auto flex items-center justify-between">
         <Link href="/" className="flex items-center gap-3">
           <Image
             width={50}
