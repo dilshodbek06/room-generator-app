@@ -4,7 +4,7 @@ import useStore from "@/store/store";
 import Image from "next/image";
 
 const PreviewImage = () => {
-  const { resultImageUrl } = useStore();
+  const { resultImageUrl, loading } = useStore();
 
   return (
     <div className="md:w-3/4 mx-auto">
@@ -18,7 +18,11 @@ const PreviewImage = () => {
           />
         </div>
       ) : (
-        <div className="bg-slate-600 h-[16rem] w-full rounded-lg flex justify-center items-center">
+        <div
+          className={`bg-slate-600 ${
+            loading && "animate-pulse"
+          }  h-[16rem] w-full rounded-lg flex justify-center items-center`}
+        >
           <Image
             alt="preview"
             src="/images/placeholder.svg"

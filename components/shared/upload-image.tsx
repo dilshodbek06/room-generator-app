@@ -50,7 +50,7 @@ const UploadImage = () => {
   };
 
   return (
-    <div className="w-full">
+    <div className="w-full" aria-disabled>
       {url ? (
         <div className=" md:w-3/4 mx-auto relative min-h-48">
           <CustomImage
@@ -93,8 +93,8 @@ const UploadImage = () => {
                 />
               </svg>
               Upload file
-              <p className="text-xs font-medium text-gray-200 mt-2 text-center">
-                PNG, JPG SVG, WEBP, and GIF are Allowed.
+              <p className="text-xs font-medium text-red-500 mt-2 text-center">
+                *This feature will be add soon*
               </p>
               <IKUpload
                 id="upload"

@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <main className="my-auto flex gap-10 p-11 lg:flex-row flex-col justify-center lg:justify-around items-center">
+    <main className="my-auto flex gap-10 px-11 pt-11 pb-2 lg:flex-row flex-col justify-center lg:justify-around items-center">
       <div className="flex relative max-w-xl flex-col items-center gap-5 gradiant-bg">
         <h1 className="text-white text-5xl font-bold text-center ">
           Redesign your rooms in seconds{" "}

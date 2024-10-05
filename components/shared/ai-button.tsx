@@ -11,9 +11,9 @@ const AiButton = () => {
   const {
     roomTheme,
     roomType,
-    uploadedImageUrl,
     handleResultImage,
     handleResetForm,
+    handleLoading,
   } = useStore();
 
   const confetti = useConfettiStore();
@@ -21,24 +21,34 @@ const AiButton = () => {
   const handleGenerate = async () => {
     try {
       setLoading(true);
-      const result = await axios.post(`/api/generate`, {
-        theme: roomTheme,
-        room: roomType,
-        imageUrl: uploadedImageUrl,
-      });
-      handleResultImage(result.data.result_url);
+      handleLoading(true);
+      // const result = await axios.post(`/api/generate`, {
+      //   theme: roomTheme,
+      //   room: roomType,
+      //   imageUrl: uploadedImageUrl,
+      // });
+      const prompt = `Redesign the room in the image. The room is a ${roomType}, and the desired theme is ${roomTheme}. Use the image as a reference to maintain the existing layout and structure of the room.`;
+      const res = await axios.post(
+        `https://image.pollinations.ai/prompt/${prompt}`,
+        {},
+        { responseType: "arraybuffer" }
+      );
+      const blob = new Blob([res.data], { type: "image/png" });
+      const newImageUrl = URL.createObjectURL(blob);
+      handleResultImage(newImageUrl);
       confetti.onOpen();
       handleResetForm();
     } catch (error) {
       console.log(error);
     } finally {
       setLoading(false);
+      handleLoading(false);
     }
   };
 
   return (
     <button
-      disabled={!roomTheme || !roomType || !uploadedImageUrl || loading}
+      disabled={!roomTheme || !roomType || loading}
       onClick={handleGenerate}
       className="bg-gradient-to-br from-blue-600 to-purple-600 text-white focus-visible:outline-blue-600 dark:focus-visible:outline-blue-600 rounded-md inline-flex cursor-pointer items-center justify-center gap-2 whitespace-nowrap px-4 md:px-12 py-2 text-lg font-medium tracking-wide transition hover:opacity-75 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:opacity-100 active:outline-offset-0 disabled:cursor-not-allowed disabled:opacity-75"
     >

@@ -8,8 +8,21 @@ import {
 function CompareSlider() {
   return (
     <ReactCompareSlider
-      itemOne={<ReactCompareSliderImage src="/images/old.jpg" />}
-      itemTwo={<ReactCompareSliderImage src="/images/modern.jpg" />}
+      className="rounded-sm"
+      itemOne={
+        <ReactCompareSliderImage
+          style={{ width: "440px", height: "460px" }}
+          src="/images/old.jpg"
+          alt="old"
+        />
+      }
+      itemTwo={
+        <ReactCompareSliderImage
+          style={{ width: "440px", height: "460px" }}
+          src="/images/modern.jpg"
+          alt="new"
+        />
+      }
     />
   );
 }
