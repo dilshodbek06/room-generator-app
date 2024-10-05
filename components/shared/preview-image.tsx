@@ -9,7 +9,7 @@ const PreviewImage = () => {
   return (
     <div className="md:w-3/4 mx-auto">
       {resultImageUrl ? (
-        <div className="relative md:w-[80%] mx-auto min-h-[17rem]">
+        <div className="relative md:w-[90%] mx-auto min-h-[18rem]">
           <Image
             alt="preview"
             src={resultImageUrl}
